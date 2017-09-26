@@ -2,6 +2,12 @@
 #include <stdlib.h>
 #include <time.h>
 
+void print_array(int a[], int length){
+	int i;
+	for (i = 0; i < length; i++){
+	printf("\telement %d: %d\n", i , a[i]);	
+}
+}
 
 int main(){
 
@@ -14,6 +20,7 @@ for (i = 0; i < 10; i++){
 	array[i] = rand();
 }
 array[9] = 0; // last value is 0
+print_array(array, 10);
 for (i = 0; i < 10; i++){
 	printf("array[%d] = %d\n", i, array[i]);
 }
@@ -24,6 +31,7 @@ for (i = 0; i < 10; i++){
 	p = &array[i];
 	array2[9-i] = * p;
 }
+print_array(array2, 10);
 for (i = 0; i < 10; i++){
 	printf("array2[%d] = %d\n", i, array2[i]);
 }
